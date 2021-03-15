@@ -1,8 +1,8 @@
 [paths]
 template_path = "templates/"
 marble_path = "pages/"
-html_path = "docs/"
-music_path = "/home/benh/Music/"
+html_path = "www/"
+music_path = "/home/user/Music/"
 
 [values]
 latest_length = 15
