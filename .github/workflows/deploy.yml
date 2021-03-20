@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -23,4 +23,19 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: html-artifact
-          path: www
+          path: public
+          
+  deploy-production:
+    name: Deploy to Production
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Download Website Artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: html-artifact
+        path: public
