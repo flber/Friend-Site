@@ -8,10 +8,12 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
       - run: git clone https://github.com/flber/Pillar
       - run: ls && cd Pillar
-      - run: apt install cargo
-      - run: cargo build --release
+      - run: cargo build --release --all-features
       - run: cd ..
       - run: ./pillar/target/release/pillar build
