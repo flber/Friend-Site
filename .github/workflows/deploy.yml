@@ -19,3 +19,8 @@ jobs:
       - name: Build site
         working-directory: ./
         run: ./Pillar/target/release/pillar build
+      - name: Save Build Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: html-artifact
+          path: www
