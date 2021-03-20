@@ -10,7 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
         with:
-          name: flber/Pillar 
+          name: flber/Pillar
+      - run: ls
       - run: cd Pillar
       - run: apt install cargo
       - run: cargo build --release
