@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: git clone https://github.com/flber/Pillar
-      - run: cd pillar
+      - run: ls && cd Pillar
       - run: apt install cargo
       - run: cargo build --release
       - run: cd ..
