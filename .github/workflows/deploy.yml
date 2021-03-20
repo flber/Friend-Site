@@ -13,7 +13,9 @@ jobs:
         with:
           toolchain: stable
       - run: git clone https://github.com/flber/Pillar
-      - run: ls && cd Pillar
+      - name: Build pillar
+        working-directory: ./Pillar
       - run: cargo build --release --all-features
-      - run: cd ..
-      - run: ./pillar/target/release/pillar build
+      - name: Build site
+        working-directory: ./
+      - run: ./Pillar/target/release/pillar build
