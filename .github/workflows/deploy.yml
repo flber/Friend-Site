@@ -9,5 +9,9 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
-      - run: chmod +x pillar
-      - run: ./pillar build
+      - run: cd .. && git clone https://github.com/flber/Pillar.git
+      - run: cd Pillar
+      - run: apt install cargo
+      - run: cargo build --release
+      - run: cd ../Friend-Site
+      - run: ./../Pillar/target/release/pillar build
