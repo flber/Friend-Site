@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
       - run: chmod +x pillar
