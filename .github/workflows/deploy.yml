@@ -12,8 +12,8 @@ jobs:
         with:
           name: flber/Pillar
       - run: ls
-      - run: cd Pillar
+      - run: cd pillar
       - run: apt install cargo
       - run: cargo build --release
-      - run: cd ../Friend-Site
-      - run: ./../Pillar/target/release/pillar build
+      - run: cd ..
+      - run: ./pillar/target/release/pillar build
