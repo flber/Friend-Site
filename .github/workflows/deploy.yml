@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: macos-11.0
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@master
       - run: chmod +x pillar
